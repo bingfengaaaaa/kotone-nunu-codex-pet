@@ -1,0 +1,50 @@
+name: Rightsholder removal request
+description: Request review or removal of content on behalf of a rightsholder
+title: "[RIGHTS] "
+labels:
+  - rights-review
+body:
+  - type: markdown
+    attributes:
+      value: |
+        We respect rightsholders. Please identify the affected content and the basis of the request. Do not publish sensitive personal information or confidential documents in a public Issue.
+  - type: input
+    id: requester
+    attributes:
+      label: Requester capacity
+      description: State whether you are the rightsholder or an authorized representative.
+      placeholder: Rightsholder / authorized representative
+    validations:
+      required: true
+  - type: textarea
+    id: content
+    attributes:
+      label: Content to review
+      description: List the exact repository paths or URLs that should be reviewed.
+    validations:
+      required: true
+  - type: textarea
+    id: basis
+    attributes:
+      label: Basis of the request
+      description: Briefly identify the relevant work, mark, or other right. Do not post confidential evidence publicly.
+    validations:
+      required: true
+  - type: dropdown
+    id: action
+    attributes:
+      label: Requested action
+      options:
+        - Remove the identified content
+        - Make the repository unavailable pending review
+        - Correct attribution or wording
+        - Other review
+    validations:
+      required: true
+  - type: checkboxes
+    id: accuracy
+    attributes:
+      label: Confirmation
+      options:
+        - label: I confirm that the information in this request is accurate to the best of my knowledge.
+          required: true
